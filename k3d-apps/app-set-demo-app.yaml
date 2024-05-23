@@ -13,6 +13,7 @@ spec:
   template:
     metadata:
       name: 'team1-demo-app-{{stage}}'
+      namespace: team1-app-definitions
       annotations:
         kargo.akuity.io/authorized-stage: kargo-demo-app:{{stage}}
     spec:
