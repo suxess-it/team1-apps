@@ -1,0 +1,70 @@
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Project
+metadata:
+  name: team3-kargo-demo-app
+spec:
+  promotionPolicies:
+  - stage: test
+    autoPromotionEnabled: true
+  - stage: qa
+    autoPromotionEnabled: true
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Warehouse
+metadata:
+  name: warehouse-demo-app
+  namespace: team3-kargo-demo-app
+spec:
+  subscriptions:
+  - git:
+      repoURL: https://github.com/suxess-it/sx-cnp-oss-demo-app
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: test
+  namespace: team3-kargo-demo-app
+spec:
+  subscriptions:
+    warehouse: warehouse-demo-app
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/suxess-it/sx-cnp-oss-demo-app
+      writeBranch: stages/test
+    argoCDAppUpdates:
+    - appName: team1-demo-app-test
+      appNamespace: team1-app-definitions
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: qa
+  namespace: team3-kargo-demo-app
+spec:
+  subscriptions:
+    upstreamStages:
+    - name: test
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/suxess-it/sx-cnp-oss-demo-app
+      writeBranch: stages/qa
+    argoCDAppUpdates:
+    - appName: team1-demo-app-qa
+      appNamespace: team1-app-definitions
+---
+apiVersion: kargo.akuity.io/v1alpha1
+kind: Stage
+metadata:
+  name: prod
+  namespace: team3-kargo-demo-app
+spec:
+  subscriptions:
+    upstreamStages:
+    - name: qa
+  promotionMechanisms:
+    gitRepoUpdates:
+    - repoURL: https://github.com/suxess-it/sx-cnp-oss-demo-app
+      writeBranch: stages/prod
+    argoCDAppUpdates:
+    - appName: team1-demo-app-prod
+      appNamespace: team1-app-definitions
