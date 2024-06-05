@@ -31,7 +31,7 @@ spec:
             subscriptions: 
               upstreamStages:
               - name: qa
-syncPolicy:
-  automated:
-    prune: true
-    selfHeal: true
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
