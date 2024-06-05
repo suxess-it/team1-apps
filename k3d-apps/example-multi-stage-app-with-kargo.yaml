@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: example-multi-stage-apps
+  name: multi-stage-apps
   namespace: team1-app-definitions
 spec:
   destination:
@@ -15,7 +15,7 @@ spec:
     helm:
       values: |
         appProject: team1-project
-        appName: example-multi-stage-app
+        appName: team1-multi-stage-app
         repoUrl: https://github.com/suxess-it/sx-cnp-oss-demo-app
         kargoProject: "{{ .Values.appName }}-kargo-project"
         createAppNamespace: true
