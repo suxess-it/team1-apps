@@ -9,9 +9,9 @@ spec:
     server: https://kubernetes.default.svc
   project: team1-project
   source:
-    path: team-apps/onboarding-apps-charts/multi-stage-app-with-kargo-pipeline
     repoURL: https://github.com/suxess-it/sx-cnp-oss
-    targetRevision: feat/onboarding-apps
+    targetRevision: main
+    path: team-apps/onboarding-apps-charts/multi-stage-app-with-kargo-pipeline
     helm:
       values: |
         appProject: team1-project
