@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: multi-stage-apps
+  name: team1-multi-stage-apps
   namespace: team1-app-definitions
 spec:
   destination:
