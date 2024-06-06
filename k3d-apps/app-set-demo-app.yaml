@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: team1-demo-app-set
-  namespace: team1-app-definitions
+  namespace: team1-apps
 spec:
   generators:
   - list:
@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       name: 'team1-demo-app-{{stage}}'
-      namespace: team1-app-definitions
+      namespace: team1-apps
       annotations:
         kargo.akuity.io/authorized-stage: team1-kargo-demo-app:{{stage}}
     spec:
