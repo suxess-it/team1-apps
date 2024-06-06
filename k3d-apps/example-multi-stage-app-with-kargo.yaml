@@ -15,10 +15,8 @@ spec:
     helm:
       values: |
         teamName: team1
-        appProject: "{{ .Values.teamName }}-project"
         appName: multi-stage-app
         repoUrl: https://github.com/suxess-it/sx-cnp-oss-demo-app
-        kargoProject: "{{ .Values.teamName }}-{{ .Values.appName }}-kargo-project"
         createAppNamespace: true
         stages:
           - name: "test"
