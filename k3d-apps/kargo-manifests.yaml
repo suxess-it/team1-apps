@@ -33,7 +33,7 @@ spec:
       writeBranch: stages/test
     argoCDAppUpdates:
     - appName: team1-demo-app-test
-      appNamespace: team1-app-definitions
+      appNamespace: team1-apps
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
@@ -50,7 +50,7 @@ spec:
       writeBranch: stages/qa
     argoCDAppUpdates:
     - appName: team1-demo-app-qa
-      appNamespace: team1-app-definitions
+      appNamespace: team1-apps
 ---
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
@@ -67,4 +67,4 @@ spec:
       writeBranch: stages/prod
     argoCDAppUpdates:
     - appName: team1-demo-app-prod
-      appNamespace: team1-app-definitions
+      appNamespace: team1-apps
