@@ -14,10 +14,11 @@ spec:
     path: team-apps/onboarding-apps-charts/multi-stage-app-with-kargo-pipeline
     helm:
       values: |
-        appProject: team1-project
-        appName: team1-multi-stage-app
+        teamName: team1
+        appProject: "{{ .Values.teamName }}-project"
+        appName: multi-stage-app
         repoUrl: https://github.com/suxess-it/sx-cnp-oss-demo-app
-        kargoProject: "{{ .Values.appName }}-kargo-project"
+        kargoProject: "{{ .Values.teamName }}-{{ .Values.appName }}-kargo-project"
         createAppNamespace: true
         stages:
           - name: "test"
