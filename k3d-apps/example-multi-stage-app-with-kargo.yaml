@@ -2,10 +2,10 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: team1-multi-stage-apps
-  namespace: team1-apps
+  namespace: adn-team1
 spec:
   destination:
-    namespace: team1-apps
+    namespace: adn-team1
     server: https://kubernetes.default.svc
   project: team1-project
   source:
