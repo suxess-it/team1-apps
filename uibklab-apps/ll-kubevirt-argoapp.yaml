@@ -4,7 +4,7 @@ kind: Application
 metadata:
   name: ll
   namespace: adn-team1
-  label:
+  labels:
     platform-engineer.cloud/creator: backstage-template
   finalizers:
   - resources-finalizer.argocd.argoproj.io
