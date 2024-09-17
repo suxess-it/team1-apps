@@ -21,6 +21,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: team1-cc
   syncPolicy:
+    managedNamespaceMetadata:
+      labels: 
+        platform-engineer.cloud/kubevirt: true
     automated: 
       prune: true
       selfHeal: true
