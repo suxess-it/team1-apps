@@ -9,7 +9,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
+  project: team1-project
   source:
     repoURL: https://github.com/phac008/vv.git
     targetRevision: main
