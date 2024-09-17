@@ -23,7 +23,7 @@ spec:
   syncPolicy:
     managedNamespaceMetadata:
       labels: 
-        platform-engineer.cloud/kubevirt: true
+        platform-engineer.cloud/kyverno: kubevirt-rolebinding
     automated: 
       prune: true
       selfHeal: true
