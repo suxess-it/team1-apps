@@ -12,7 +12,7 @@ spec:
   project: team1-project
   source:
     repoURL: https://github.com/phac008/i7.git
-    targetRevision: main
+    targetRevision: master
     path: helm/chart
     helm:
       valueFiles:
